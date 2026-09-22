@@ -1,0 +1,9 @@
+[
+  { "level": "Préscolaire", "detail": "PS · MS · GS", "registration": 13000, "copies": null, "monthly": 10000, "uniform": 8000, "total": 31000 },
+  { "level": "CI / CP", "registration": 13000, "copies": 2000, "monthly": 11000, "uniform": 9000, "total": 35000 },
+  { "level": "CE1 / CE2", "registration": 13000, "copies": 2000, "monthly": 12000, "uniform": 9000, "total": 36000 },
+  { "level": "CM1", "registration": 13000, "copies": 2000, "monthly": 13000, "uniform": 9000, "total": 37000 },
+  { "level": "CM2", "registration": 13000, "copies": 5000, "monthly": 13000, "uniform": 9000, "total": 40000 },
+  { "level": "Demi-pensionnat", "registration": 13000, "copies": 2000, "monthly": 22000, "uniform": 9000, "total": 46000 },
+  { "level": "Internat", "registration": 13000, "copies": 2000, "monthly": 60000, "uniform": 9000, "total": 84000 }
+]

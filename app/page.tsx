@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import SchoolFees from '@/components/school-fees';
 import {
   ArrowUpRight,
   ArrowRight,
@@ -16,6 +17,8 @@ import {
   Mic,
   Bus,
   Sparkles,
+  Phone,
+  Mail,
 } from 'lucide-react';
 import {
   Dialog,
@@ -45,6 +48,7 @@ const photos = [
 const navigation = [
   ['L’école', 'ecole'],
   ['Nos cycles', 'cycles'],
+  ['Inscriptions', 'inscriptions'],
   ['Vie scolaire', 'galerie'],
   ['Événements', 'evenements'],
 ];
@@ -93,7 +97,7 @@ export default function Home() {
         <div className="wrap flex items-center justify-between gap-4">
           <span>Grandir dans le savoir, s’épanouir dans les valeurs.</span>
           <span className="hidden items-center gap-2 sm:flex">
-            <MapPin size={13} /> Keur Fatma Haris
+            <MapPin size={13} /> Cambérène 1 · Dakar
           </span>
         </div>
       </div>
@@ -105,13 +109,13 @@ export default function Home() {
             </span>
             <span>
               <strong>
-                ALHIDAYA<span className="brand-dot">.</span>
+                AL HIDAYA<span className="brand-dot">.</span>
               </strong>
               <small>ÉCOLE FRANCO-ARABE</small>
             </span>
           </a>
           <nav
-            className="hidden items-center gap-8 lg:flex"
+            className="hidden items-center gap-5 xl:flex"
             aria-label="Navigation principale"
           >
             {navigation.map(([label, id]) => (
@@ -127,7 +131,7 @@ export default function Home() {
             Rencontrons-nous <ArrowUpRight size={17} />
           </a>
           <button
-            className="menu-toggle lg:hidden"
+            className="menu-toggle xl:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
@@ -139,7 +143,7 @@ export default function Home() {
         {menuOpen && (
           <nav
             id="mobile-nav"
-            className="mobile-nav lg:hidden"
+            className="mobile-nav xl:hidden"
             aria-label="Navigation mobile"
           >
             {[...navigation, ['Contact', 'contact']].map(([label, id]) => (
@@ -156,7 +160,7 @@ export default function Home() {
           <div className="wrap hero-grid">
             <div className="hero-copy">
               <span className="eyebrow">
-                <span className="little-dot" /> BIENVENUE À ALHIDAYA
+                <span className="little-dot" /> AL HIDAYA · RENTRÉE 2026–2027
               </span>
               <h1>
                 De belles racines.
@@ -164,15 +168,16 @@ export default function Home() {
                 Un <em>grand avenir.</em>
               </h1>
               <p className="hero-description">
-                À Keur Fatma Haris, une école franco-arabe pour apprendre,
-                s’épanouir et grandir ensemble, du préscolaire à l’élémentaire.
+                À Cambérène 1, l’école franco-arabe Al Hidaya Keur Fatma Haris
+                accueille les enfants du préscolaire à l’élémentaire, pour
+                apprendre et grandir ensemble.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href="#cycles" className="button button-green">
                   Découvrir notre école <ArrowUpRight size={18} />
                 </a>
-                <a href="#evenements" className="button button-outline">
-                  La vie à Alhidaya <ArrowRight size={17} />
+                <a href="#inscriptions" className="button button-outline">
+                  Inscriptions & tarifs <ArrowRight size={17} />
                 </a>
               </div>
               <div className="hero-note">
@@ -255,13 +260,15 @@ export default function Home() {
           </div>
           <div className="about-copy">
             <p>
-              Chaque enfant a un monde à découvrir et un avenir à construire. À
-              Alhidaya Keur Fatma Haris, le français et l’arabe se rencontrent
-              au fil des apprentissages.
+              L’école franco-arabe Al Hidaya Keur Fatma Haris se situe à
+              Cambérène 1, quartier Islam, en face de la mer. Elle propose le
+              préscolaire, de la petite à la grande section, et l’élémentaire,
+              du CI au CM2.
             </p>
             <p>
-              Du préscolaire à l’élémentaire, notre ambition est de donner toute
-              leur place à la curiosité, au respect et au plaisir d’apprendre.
+              L’école propose également le demi-pensionnat, l’internat et des
+              cours complémentaires : renforcement en français, anglais et
+              informatique.
             </p>
             <div className="inline-values">
               <span>
@@ -272,8 +279,8 @@ export default function Home() {
               </span>
             </div>
             <p className="draft-note">
-              Présentation proposée pour la maquette, à préciser avec l’équipe
-              de l’école.
+              IA Dakar / IEF Parcelles Assainies<br/>
+              Autorisation : IA-Dk/BEP · NINEA : 00843-94-63
             </p>
           </div>
         </section>
@@ -297,16 +304,16 @@ export default function Home() {
                 {
                   title: 'Le préscolaire',
                   description:
-                    'S’éveiller, jouer, s’exprimer. Un premier univers d’apprentissage pour faire grandir la curiosité et découvrir le plaisir d’être ensemble.',
-                  tags: ['Éveil & découverte', 'Expression', 'Créativité'],
+                    'La petite, la moyenne et la grande section accueillent les enfants pour leurs premiers pas à l’école. Un univers pour s’éveiller, s’exprimer et découvrir le plaisir d’apprendre ensemble.',
+                  tags: ['Petite section', 'Moyenne section', 'Grande section'],
                   label: 'LES PREMIERS PAS',
                   icon: Sprout,
                 },
                 {
                   title: 'L’élémentaire',
                   description:
-                    'Lire, écrire, comprendre. Construire des bases solides en français et en arabe, développer sa réflexion et prendre confiance en ses capacités.',
-                  tags: ['Français & arabe', 'Connaissances', 'Autonomie'],
+                    'Du CI au CM2, un parcours franco-arabe pour lire, écrire, comprendre et construire les bases des apprentissages.',
+                  tags: ['CI · CP', 'CE1 · CE2', 'CM1 · CM2'],
                   label: 'GRANDIR DANS LE SAVOIR',
                   icon: BookOpen,
                 },
@@ -334,8 +341,8 @@ export default function Home() {
                         <span key={tag}>{tag}</span>
                       ))}
                     </div>
-                    <a href="#contact" className="text-link">
-                      Se renseigner sur{' '}
+                    <a href="#inscriptions" className="text-link">
+                      Voir les tarifs pour{' '}
                       {index === 0 ? 'le préscolaire' : 'l’élémentaire'}{' '}
                       <ArrowUpRight size={18} />
                     </a>
@@ -343,13 +350,10 @@ export default function Home() {
                 </article>
               ))}
             </div>
-            <p className="draft-note mt-5">
-              Les classes proposées et le programme détaillé seront complétés
-              avec la fiche de l’école.
-            </p>
           </div>
         </section>
-        <section id="evenements" className="section wrap">
+        <SchoolFees />
+        <section id="evenements" className="section wrap events-section">
           <div className="section-heading">
             <div>
               <span className="eyebrow">DES MOMENTS QUI NOUS RASSEMBLENT</span>
@@ -461,28 +465,24 @@ export default function Home() {
               </h2>
               <p>
                 Une question sur l’école ou les inscriptions ?<br />
-                Retrouvez bientôt ici toutes les informations pratiques.
+                La direction vous renseigne sur la rentrée 2026–2027.
               </p>
               <span className="contact-location">
-                <MapPin size={18} /> Alhidaya · Keur Fatma Haris
+                <MapPin size={18} /> Cambérène 1, quartier Islam, en face de la mer
               </span>
+              <div className="contact-actions">
+                <a className="button inline-flex" href="tel:+221776358919"><Phone size={18}/> Appeler l’école</a>
+                <a className="button inline-flex" href="mailto:safietou1305@gmail.com"><Mail size={18}/> Écrire à la direction</a>
+              </div>
             </div>
             <div className="contact-information">
               <h3>Préparer votre rencontre</h3>
-              {[
-                ['Nous contacter', 'Téléphone et e-mail à venir'],
-                ['Venir à l’école', 'Adresse précise à compléter'],
-                ['Les inscriptions', 'Pièces à fournir et modalités à venir'],
-                ['Les horaires', 'Horaires d’accueil à confirmer'],
-              ].map(([title, info]) => (
-                <div className="contact-row" key={title}>
-                  <span>{title}</span>
-                  <p>{info}</p>
-                </div>
-              ))}
+              <div className="contact-row"><span>Téléphone</span><p><a href="tel:+221776358919">77 635 89 19</a></p></div>
+              <div className="contact-row"><span>E-mail</span><p><a href="mailto:safietou1305@gmail.com">safietou1305@gmail.com</a></p></div>
+              <div className="contact-row"><span>Adresse</span><p>Cambérène 1, quartier Islam, en face de la mer</p></div>
+              <div className="contact-row"><span>Inscription / réinscription</span><p>Année académique 2026–2027 · <a href="#inscriptions">Consulter les tarifs et les pièces à fournir</a></p></div>
               <p className="contact-footnote">
-                Ces renseignements seront ajoutés dès réception de la fiche de
-                l’école.
+                Pour connaître les horaires d’accueil, contactez la direction avant votre visite.
               </p>
             </div>
           </div>
@@ -495,7 +495,7 @@ export default function Home() {
               <BookOpen size={27} strokeWidth={1.5} />
             </span>
             <span>
-              <strong>ALHIDAYA.</strong>
+              <strong>AL HIDAYA.</strong>
               <small>KEUR FATMA HARIS</small>
             </span>
           </a>
@@ -507,13 +507,14 @@ export default function Home() {
           <nav aria-label="Navigation de pied de page">
             <a href="#ecole">L’école</a>
             <a href="#cycles">Nos cycles</a>
+            <a href="#inscriptions">Inscriptions</a>
             <a href="#evenements">Événements</a>
             <a href="#contact">Contact</a>
           </nav>
         </div>
         <div className="wrap footer-bottom">
-          <span>© {new Date().getFullYear()} Alhidaya Keur Fatma Haris</span>
-          <span>Maquette · Contenus à compléter · Photos : Pexels</span>
+          <span>© {new Date().getFullYear()} Al Hidaya Keur Fatma Haris</span>
+          <span>Année académique 2026–2027 · Photos d’illustration : Pexels</span>
           <a href="#accueil">Retour en haut ↑</a>
         </div>
       </footer>

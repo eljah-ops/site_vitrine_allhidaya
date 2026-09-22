@@ -978,3 +978,36 @@ footer {
     animation: none !important;
   }
 }
+
+/* Tarifs officiels : fiche de renseignement 2026–2027. */
+.fees-table { border: 1px solid #dce6dc; border-radius: 12px; overflow: hidden; }
+.fees-table table { font-size: 15px; }
+.fees-table thead { background: #174b37; }
+.fees-table thead th { color: white; font-size: 14px; padding: 20px 16px; white-space: normal; }
+.fees-table tbody th, .fees-table td { padding: 22px 16px; border-color: #dce6dc; }
+.fees-table tbody tr:nth-child(even) { background: #f4f7ef; }
+.fees-table small { display: block; margin-top: 6px; font-size: 12px; color: #626e60; font-weight: 400; }
+.fee-total { display: inline-block; background: #e5efdf; padding: 9px 13px; border-radius: 6px; white-space: nowrap; }
+.fee-cards { gap: 16px; }
+.fee-card { border: 1px solid #dce6dc; border-radius: 12px; padding: 22px; margin-bottom: 16px; }
+.fee-card h3 { font-size: 26px; }
+.fee-detail { font-size: 14px; margin-top: 4px; color: #64705f; }
+.fee-card dl { margin-top: 18px; }
+.fee-card dl > div { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; font-size: 14px; }
+.fee-card dd { font-weight: 600; white-space: nowrap; }
+.fee-card .fee-card-total { border-top: 1px solid #dce6dc; margin-top: 10px; padding-top: 16px; font-size: 16px; font-weight: 700; color: #196c48; }
+.enrollment-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-top: 32px; }
+.enrollment-notes article { background: #f4f7ef; padding: 26px; border-radius: 10px; }
+.enrollment-notes svg { color: #377c48; }
+.enrollment-notes h3 { font-size: 23px; margin: 17px 0 12px; }
+.enrollment-notes p { font-size: 16px; line-height: 1.8; color: #626e60; }
+.events-section { border-top: 1px solid #dce6dc; }
+.contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+.contact-actions .button { background: #e2ebc7; color: #174b37; }
+.contact-actions .button:hover { background: white; }
+.contact-row a { text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.contact-row a:hover { color: white; }
+.contact-location { align-items: flex-start; line-height: 1.6; }
+.contact-location svg { flex-shrink: 0; margin-top: 2px; }
+@media (max-width: 767px) { .enrollment-notes { grid-template-columns: 1fr; gap: 16px; } }
+@media (min-width: 768px) and (max-width: 1100px) { .fees-table td, .fees-table tbody th, .fees-table thead th { padding-inline: 10px; } .fees-table table { font-size: 14px; } .enrollment-notes { gap: 14px; } .enrollment-notes article { padding: 20px; } }
