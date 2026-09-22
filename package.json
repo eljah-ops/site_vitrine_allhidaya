@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
-    "start": "vite preview --outDir out",
+    "start": "vite preview --outDir dist/client",
     "lint": "oxlint",
     "format": "oxfmt"
   },
