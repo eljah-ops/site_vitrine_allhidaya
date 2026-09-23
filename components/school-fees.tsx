@@ -1,4 +1,10 @@
-import { Download, CalendarDays, FileText, BookOpen } from "lucide-react";
+import {
+  ArrowUpRight,
+  Download,
+  CalendarDays,
+  FileText,
+  BookOpen,
+} from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -7,10 +13,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import fees from "@/lib/school-fees.json";
+} from '@/components/ui/table';
+import fees from '@/lib/school-fees.json';
 
-const money = (amount: number) => `${amount.toLocaleString("fr-FR")} F`;
+const money = (amount: number) => `${amount.toLocaleString('fr-FR')} F`;
 
 export default function SchoolFees() {
   return (
@@ -34,6 +40,47 @@ export default function SchoolFees() {
         Inscription et réinscription : retrouvez les tarifs communiqués par la
         direction. Tous les montants sont en francs CFA.
       </p>
+      <div className="enrollment-guide">
+        <div className="enrollment-guide-heading">
+          <h3>Comment préparer une inscription ?</h3>
+          <span>Votre parcours en 3 étapes</span>
+        </div>
+        <ol className="enrollment-steps">
+          <li>
+            <span>01</span>
+            <div>
+              <h4>Choisir le niveau</h4>
+              <p>
+                Repérez le cycle et la formule d’accueil de votre enfant, puis
+                consultez les tarifs ci-dessous.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <h4>Préparer les documents</h4>
+              <p>
+                Téléchargez la fiche de renseignement. Prévoyez un extrait de
+                naissance pour un nouvel élève ou une entrée en CM2.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <h4>Rencontrer la direction</h4>
+              <p>
+                Contactez l’école pour vérifier les modalités d’admission et
+                organiser le dépôt du dossier.
+              </p>
+            </div>
+          </li>
+        </ol>
+        <a className="text-link" href="#contact">
+          Préparer mon inscription avec la direction <ArrowUpRight size={18} />
+        </a>
+      </div>
       <div className="fees-table hidden md:block">
         <Table>
           <TableCaption className="sr-only">
@@ -108,7 +155,7 @@ export default function SchoolFees() {
           <CalendarDays size={23} />
           <h3>Les mensualités</h3>
           <p>
-            La mensualité est payable au plus tard le{" "}
+            La mensualité est payable au plus tard le{' '}
             <strong>05 du mois</strong>. Celle de juin est incluse dans
             l’inscription.
           </p>

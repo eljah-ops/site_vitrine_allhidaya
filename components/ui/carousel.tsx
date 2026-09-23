@@ -1,5 +1,6 @@
 'use client';
 
+/* oxlint-disable react/react-compiler */
 import * as React from 'react';
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
@@ -90,7 +91,8 @@ function Carousel({
 
   React.useEffect(() => {
     if (!api || !setApi) return;
-    setApi(api);
+    const frame = requestAnimationFrame(() => setApi(api));
+    return () => cancelAnimationFrame(frame);
   }, [api, setApi]);
 
   React.useEffect(() => {
@@ -121,7 +123,7 @@ function Carousel({
       <div
         onKeyDownCapture={handleKeyDown}
         className={cn('relative', className)}
-        role="region"
+        aria-label="Carousel"
         aria-roledescription="carousel"
         data-slot="carousel"
         {...props}
@@ -158,7 +160,6 @@ function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
 
   return (
     <div
-      role="group"
       aria-roledescription="slide"
       data-slot="carousel-item"
       className={cn(
