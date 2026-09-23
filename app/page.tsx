@@ -1,6 +1,6 @@
-'use client';
-import { useState } from 'react';
-import SchoolFees from '@/components/school-fees';
+"use client";
+import { useState } from "react";
+import SchoolFees from "@/components/school-fees";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -19,69 +19,69 @@ import {
   Sparkles,
   Phone,
   Mail,
-} from 'lucide-react';
+} from "lucide-react";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTitle,
   DialogClose,
-} from '@/components/ui/dialog';
+} from "@/components/ui/dialog";
 
 const photos = [
   {
-    src: '/images/hero.jpg',
-    title: 'Le plaisir d’apprendre ensemble',
-    alt: 'Des enfants souriants en classe — photo d’illustration',
+    src: "/images/hero.jpg",
+    title: "Le plaisir d’apprendre ensemble",
+    alt: "Des enfants souriants en classe — photo d’illustration",
   },
   {
-    src: '/images/maternelle.jpg',
-    title: 'De petites mains, de grandes idées',
-    alt: 'Enfants participant à une activité créative — photo d’illustration',
+    src: "/images/maternelle.jpg",
+    title: "De petites mains, de grandes idées",
+    alt: "Enfants participant à une activité créative — photo d’illustration",
   },
   {
-    src: '/images/activite.jpg',
-    title: 'Grandir, un apprentissage à la fois',
-    alt: 'Un enseignant accompagne un élève — photo d’illustration',
+    src: "/images/activite.jpg",
+    title: "Grandir, un apprentissage à la fois",
+    alt: "Un enseignant accompagne un élève — photo d’illustration",
   },
 ];
 const navigation = [
-  ['L’école', 'ecole'],
-  ['Nos cycles', 'cycles'],
-  ['Inscriptions', 'inscriptions'],
-  ['Vie scolaire', 'galerie'],
-  ['Événements', 'evenements'],
+  ["L’école", "ecole"],
+  ["Nos cycles", "cycles"],
+  ["Inscriptions", "inscriptions"],
+  ["Vie scolaire", "galerie"],
+  ["Événements", "evenements"],
 ];
 const events = [
   {
     icon: Mic,
-    type: 'CONFÉRENCE',
-    title: 'Apprendre et grandir ensemble',
+    type: "CONFÉRENCE",
+    title: "Apprendre et grandir ensemble",
     description:
-      'Un temps d’échange entre les familles et l’équipe éducative autour de l’éducation des enfants.',
+      "Un temps d’échange entre les familles et l’équipe éducative autour de l’éducation des enfants.",
     detail:
-      'Le thème, les intervenants et les modalités de participation seront précisés avec le programme de l’école.',
-    tone: 'mint',
+      "Le thème, les intervenants et les modalités de participation seront précisés avec le programme de l’école.",
+    tone: "mint",
   },
   {
     icon: Bus,
-    type: 'SORTIE PÉDAGOGIQUE',
-    title: 'La découverte hors des murs',
+    type: "SORTIE PÉDAGOGIQUE",
+    title: "La découverte hors des murs",
     description:
-      'Observer, explorer et s’émerveiller : une autre façon de découvrir le monde qui nous entoure.',
+      "Observer, explorer et s’émerveiller : une autre façon de découvrir le monde qui nous entoure.",
     detail:
-      'La destination, les classes concernées et les horaires seront communiqués par l’école.',
-    tone: 'cream',
+      "La destination, les classes concernées et les horaires seront communiqués par l’école.",
+    tone: "cream",
   },
   {
     icon: Sparkles,
-    type: 'VIE DE L’ÉCOLE',
-    title: 'Nos talents à l’honneur',
+    type: "VIE DE L’ÉCOLE",
+    title: "Nos talents à l’honneur",
     description:
-      'Un moment de partage pour mettre en lumière les découvertes et les réalisations des élèves.',
+      "Un moment de partage pour mettre en lumière les découvertes et les réalisations des élèves.",
     detail:
-      'Le programme de cette rencontre et les informations destinées aux familles seront ajoutés après confirmation par l’école.',
-    tone: 'blue',
+      "Le programme de cette rencontre et les informations destinées aux familles seront ajoutés après confirmation par l’école.",
+    tone: "blue",
   },
 ];
 export default function Home() {
@@ -135,7 +135,7 @@ export default function Home() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
-            aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           >
             {menuOpen ? <X /> : <Menu />}
           </button>
@@ -146,7 +146,7 @@ export default function Home() {
             className="mobile-nav xl:hidden"
             aria-label="Navigation mobile"
           >
-            {[...navigation, ['Contact', 'contact']].map(([label, id]) => (
+            {[...navigation, ["Contact", "contact"]].map(([label, id]) => (
               <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>
                 {label}
                 <ArrowUpRight size={16} />
@@ -200,7 +200,7 @@ export default function Home() {
                 height="760"
                 fetchPriority="high"
               />
-              <span className="photo-label">Photo d’illustration</span>
+
               <div className="hero-seal">
                 <Sprout size={25} />
                 <span>
@@ -279,7 +279,8 @@ export default function Home() {
               </span>
             </div>
             <p className="draft-note">
-              IA Dakar / IEF Parcelles Assainies<br/>
+              IA Dakar / IEF Parcelles Assainies
+              <br />
               Autorisation : IA-Dk/BEP · NINEA : 00843-94-63
             </p>
           </div>
@@ -302,19 +303,19 @@ export default function Home() {
             <div className="cycle-grid">
               {[
                 {
-                  title: 'Le préscolaire',
+                  title: "Le préscolaire",
                   description:
-                    'La petite, la moyenne et la grande section accueillent les enfants pour leurs premiers pas à l’école. Un univers pour s’éveiller, s’exprimer et découvrir le plaisir d’apprendre ensemble.',
-                  tags: ['Petite section', 'Moyenne section', 'Grande section'],
-                  label: 'LES PREMIERS PAS',
+                    "La petite, la moyenne et la grande section accueillent les enfants pour leurs premiers pas à l’école. Un univers pour s’éveiller, s’exprimer et découvrir le plaisir d’apprendre ensemble.",
+                  tags: ["Petite section", "Moyenne section", "Grande section"],
+                  label: "LES PREMIERS PAS",
                   icon: Sprout,
                 },
                 {
-                  title: 'L’élémentaire',
+                  title: "L’élémentaire",
                   description:
-                    'Du CI au CM2, un parcours franco-arabe pour lire, écrire, comprendre et construire les bases des apprentissages.',
-                  tags: ['CI · CP', 'CE1 · CE2', 'CM1 · CM2'],
-                  label: 'GRANDIR DANS LE SAVOIR',
+                    "Du CI au CM2, un parcours franco-arabe pour lire, écrire, comprendre et construire les bases des apprentissages.",
+                  tags: ["CI · CP", "CE1 · CE2", "CM1 · CM2"],
+                  label: "GRANDIR DANS LE SAVOIR",
                   icon: BookOpen,
                 },
               ].map((cycle, index) => (
@@ -342,8 +343,8 @@ export default function Home() {
                       ))}
                     </div>
                     <a href="#inscriptions" className="text-link">
-                      Voir les tarifs pour{' '}
-                      {index === 0 ? 'le préscolaire' : 'l’élémentaire'}{' '}
+                      Voir les tarifs pour{" "}
+                      {index === 0 ? "le préscolaire" : "l’élémentaire"}{" "}
                       <ArrowUpRight size={18} />
                     </a>
                   </div>
@@ -448,10 +449,7 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            <p className="draft-note mt-5">
-              Photos d’illustration · Elles seront remplacées par les photos des
-              élèves et des activités de l’école.
-            </p>
+           
           </div>
         </section>
         <section id="contact" className="section wrap">
@@ -468,21 +466,53 @@ export default function Home() {
                 La direction vous renseigne sur la rentrée 2026–2027.
               </p>
               <span className="contact-location">
-                <MapPin size={18} /> Cambérène 1, quartier Islam, en face de la mer
+                <MapPin size={18} /> Cambérène 1, quartier Islam, en face de la
+                mer
               </span>
               <div className="contact-actions">
-                <a className="button inline-flex" href="tel:+221776358919"><Phone size={18}/> Appeler l’école</a>
-                <a className="button inline-flex" href="mailto:safietou1305@gmail.com"><Mail size={18}/> Écrire à la direction</a>
+                <a className="button inline-flex" href="tel:+221776358919">
+                  <Phone size={18} /> Appeler l’école
+                </a>
+                <a
+                  className="button inline-flex"
+                  href="mailto:safietou1305@gmail.com"
+                >
+                  <Mail size={18} /> Écrire à la direction
+                </a>
               </div>
             </div>
             <div className="contact-information">
               <h3>Préparer votre rencontre</h3>
-              <div className="contact-row"><span>Téléphone</span><p><a href="tel:+221776358919">77 635 89 19</a></p></div>
-              <div className="contact-row"><span>E-mail</span><p><a href="mailto:safietou1305@gmail.com">safietou1305@gmail.com</a></p></div>
-              <div className="contact-row"><span>Adresse</span><p>Cambérène 1, quartier Islam, en face de la mer</p></div>
-              <div className="contact-row"><span>Inscription / réinscription</span><p>Année académique 2026–2027 · <a href="#inscriptions">Consulter les tarifs et les pièces à fournir</a></p></div>
+              <div className="contact-row">
+                <span>Téléphone</span>
+                <p>
+                  <a href="tel:+221776358919">77 635 89 19</a>
+                </p>
+              </div>
+              <div className="contact-row">
+                <span>E-mail</span>
+                <p>
+                  <a href="mailto:safietou1305@gmail.com">
+                    safietou1305@gmail.com
+                  </a>
+                </p>
+              </div>
+              <div className="contact-row">
+                <span>Adresse</span>
+                <p>Cambérène 1, quartier Islam, en face de la mer</p>
+              </div>
+              <div className="contact-row">
+                <span>Inscription / réinscription</span>
+                <p>
+                  Année académique 2026–2027 ·{" "}
+                  <a href="#inscriptions">
+                    Consulter les tarifs et les pièces à fournir
+                  </a>
+                </p>
+              </div>
               <p className="contact-footnote">
-                Pour connaître les horaires d’accueil, contactez la direction avant votre visite.
+                Pour connaître les horaires d’accueil, contactez la direction
+                avant votre visite.
               </p>
             </div>
           </div>
@@ -514,7 +544,9 @@ export default function Home() {
         </div>
         <div className="wrap footer-bottom">
           <span>© {new Date().getFullYear()} Al Hidaya Keur Fatma Haris</span>
-          <span>Année académique 2026–2027 · Photos d’illustration : Pexels</span>
+          <span>
+            Année académique 2026–2027 · 
+          </span>
           <a href="#accueil">Retour en haut ↑</a>
         </div>
       </footer>

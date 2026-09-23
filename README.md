@@ -21,9 +21,14 @@ npm run build
 - `app/page.tsx` : présentation, cycles, événements, coordonnées et galerie.
 - `app/globals.css` : couleurs, typographie et mise en page responsive.
 - `app/layout.tsx` : titre et description du site.
+- `components/school-fees.tsx` : tarifs sur ordinateur et mobile, conditions d’inscription.
+- `lib/school-fees.json` : montants de la fiche officielle 2026–2027.
+- `public/documents/fiche-renseignement-2026-2027.pdf` : fiche originale téléchargeable.
 - `public/images/` : images locales optimisées. Sources dans `SOURCES.md`.
 
-Les photographies sont des illustrations, pas les élèves d’Alhidaya. Les événements sont des exemples sans dates réelles. Remplacer ces contenus avec la fiche d’information et les photos de l’école. La section contact ne transmet aucun message tant que les coordonnées ne sont pas fournies.
+Les coordonnées, niveaux, tarifs, formules d’accueil et conditions d’inscription proviennent de la fiche officielle 2026–2027. Les liens de contact ouvrent le téléphone ou la messagerie de l’utilisateur. Les horaires d’accueil restent à confirmer auprès de la direction.
+
+Les photographies sont des illustrations, pas les élèves d’Alhidaya. Les événements sont des exemples sans dates réelles. Ces contenus restent à remplacer avec les photos et le programme de l’école.
 
 Navigation par ancres, menu mobile, galerie agrandissable au clavier et fiches d’événements. Les animations respectent la préférence de réduction de mouvement.
 
