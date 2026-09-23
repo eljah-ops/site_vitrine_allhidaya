@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import SchoolFees from "@/components/school-fees";
+import photos from "@/lib/school-photos.json";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -28,23 +29,6 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 
-const photos = [
-  {
-    src: "/images/hero.jpg",
-    title: "Le plaisir d’apprendre ensemble",
-    alt: "Des enfants souriants en classe — photo d’illustration",
-  },
-  {
-    src: "/images/maternelle.jpg",
-    title: "De petites mains, de grandes idées",
-    alt: "Enfants participant à une activité créative — photo d’illustration",
-  },
-  {
-    src: "/images/activite.jpg",
-    title: "Grandir, un apprentissage à la fois",
-    alt: "Un enseignant accompagne un élève — photo d’illustration",
-  },
-];
 const navigation = [
   ["L’école", "ecole"],
   ["Nos cycles", "cycles"],
@@ -87,6 +71,7 @@ const events = [
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [photo, setPhoto] = useState<number | null>(null);
+  const [showAllPhotos, setShowAllPhotos] = useState(false);
   const [event, setEvent] = useState<number | null>(null);
   return (
     <>
@@ -195,9 +180,11 @@ export default function Home() {
               <img
                 className="hero-photo"
                 src={photos[0].src}
+                srcSet={`${photos[0].thumbnail} ${photos[0].thumbnailWidth}w, ${photos[0].src} ${photos[0].width}w`}
+                sizes="(max-width: 767px) 90vw, 45vw"
                 alt={photos[0].alt}
-                width="700"
-                height="760"
+                width={photos[0].width}
+                height={photos[0].height}
                 fetchPriority="high"
               />
 
@@ -323,9 +310,11 @@ export default function Home() {
                   <div className="cycle-image">
                     <img
                       src={photos[index + 1].src}
+                      srcSet={`${photos[index + 1].thumbnail} ${photos[index + 1].thumbnailWidth}w, ${photos[index + 1].src} ${photos[index + 1].width}w`}
+                      sizes="(max-width: 767px) 90vw, 45vw"
                       alt={photos[index + 1].alt}
-                      width="720"
-                      height="460"
+                      width={photos[index + 1].width}
+                      height={photos[index + 1].height}
                       loading="lazy"
                     />
                     <span className="image-pill">
@@ -421,26 +410,27 @@ export default function Home() {
                   className="mb-3 text-green-800"
                 />
                 <p>
-                  Un regard sur les petits moments
+                  Les photos de notre école,
                   <br />
-                  qui font les grandes années.
+                  en classe et lors de nos sorties.
                 </p>
               </div>
             </div>
-            <div className="gallery-grid">
-              {photos.map((item, index) => (
+            <div id="school-gallery" className="gallery-grid school-gallery">
+              {photos.slice(0, showAllPhotos ? photos.length : 6).map((item, index) => (
                 <button
                   key={item.src}
-                  className={`gallery-item gallery-item-${index}`}
+                  className="gallery-item"
                   onClick={() => setPhoto(index)}
-                  aria-label={`Agrandir : ${item.title}`}
+                  aria-label={`Agrandir la photo ${index + 1} : ${item.title}`}
                 >
                   <img
-                    src={item.src}
+                    src={item.thumbnail}
                     alt={item.alt}
-                    width="800"
-                    height="700"
+                    width={item.width}
+                    height={item.height}
                     loading="lazy"
+                    decoding="async"
                   />
                   <span className="gallery-caption">
                     {item.title}
@@ -449,7 +439,18 @@ export default function Home() {
                 </button>
               ))}
             </div>
-           
+            <div className="gallery-actions">
+              <p aria-live="polite">{showAllPhotos ? photos.length : 6} photos sur {photos.length}</p>
+              <button
+                className="button button-outline"
+                aria-expanded={showAllPhotos}
+                aria-controls="school-gallery"
+                onClick={() => setShowAllPhotos(!showAllPhotos)}
+              >
+                {showAllPhotos ? "Réduire la galerie" : `Voir les ${photos.length} photos`}
+                <Camera size={18} />
+              </button>
+            </div>
           </div>
         </section>
         <section id="contact" className="section wrap">
@@ -559,6 +560,12 @@ export default function Home() {
         <DialogContent
           className="max-h-[92dvh] overflow-y-auto p-5 sm:max-w-4xl"
           showCloseButton={false}
+          onKeyDown={(e) => {
+            if (photo !== null && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
+              e.preventDefault();
+              setPhoto((photo + (e.key === "ArrowLeft" ? photos.length - 1 : 1)) % photos.length);
+            }
+          }}
         >
           {photo !== null && (
             <>
@@ -567,9 +574,8 @@ export default function Home() {
                   <DialogTitle className="text-xl">
                     {photos[photo].title}
                   </DialogTitle>
-                  <DialogDescription className="mt-2">
-                    Photo d’illustration · Les photos de l’école seront ajoutées
-                    prochainement.
+                  <DialogDescription className="mt-2" aria-live="polite">
+                    Al Hidaya Keur Fatma Haris · Photo {photo + 1} sur {photos.length}
                   </DialogDescription>
                 </div>
                 <DialogClose
@@ -587,13 +593,13 @@ export default function Home() {
               <div className="flex justify-between gap-3">
                 <button
                   className="button button-outline"
-                  onClick={() => setPhoto((photo + 2) % 3)}
+                  onClick={() => setPhoto((photo + photos.length - 1) % photos.length)}
                 >
                   ← Précédente
                 </button>
                 <button
                   className="button button-green"
-                  onClick={() => setPhoto((photo + 1) % 3)}
+                  onClick={() => setPhoto((photo + 1) % photos.length)}
                 >
                   Suivante →
                 </button>

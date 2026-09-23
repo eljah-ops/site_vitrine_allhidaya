@@ -1,15 +1,41 @@
-# Photographies d’illustration
+# Photographies de l’école
 
-Ces photos illustrent une maquette. Elles ne représentent pas les élèves ni les locaux de l’École Al Hidaya, et leur lieu n’est pas présenté comme le Sénégal.
+32 photographies fournies par l’utilisateur dans l’archive WhatsApp du 23 septembre 2026.
+Les fichiers originaux restent dans l’archive. Les copies WebP sont dimensionnées pour le site, sans modification des visages ni du contenu.
+Les photos 04, 05, 06, 30, 31 et 32 ont été tournées de 90° pour retrouver leur orientation de lecture.
+Les dates des noms de fichiers correspondent à leur transfert et ne sont pas utilisées comme dates des événements.
 
-- `hero.jpg` — Şeyhmus Kino, « Smiling Children in African Classroom Setting ».
-  Source : https://www.pexels.com/photo/smiling-children-in-african-classroom-setting-28593055/
-  Téléchargement : https://images.pexels.com/photos/28593055/pexels-photo-28593055.jpeg?cs=srgb&dl=pexels-seyhmuskino-28593055.jpg&fm=jpg
-- `maternelle.jpg` — Anastasia Shuraeva, « Woman Helping Student in Coloring ».
-  Source : https://www.pexels.com/photo/woman-helping-student-in-coloring-8466774/
-  Téléchargement : https://images.pexels.com/photos/8466774/pexels-photo-8466774.jpeg?cs=srgb&dl=pexels-anastasia-shuraeva-8466774.jpg&fm=jpg
-- `activite.jpg` — Katerina Holmes, « Cheerful black female teacher helping pupil with task ».
-  Source : https://www.pexels.com/photo/cheerful-black-female-teacher-helping-pupil-with-task-5905490/
-  Téléchargement : https://images.pexels.com/photos/5905490/pexels-photo-5905490.jpeg?cs=srgb&dl=pexels-katerina-holmes-5905490.jpg&fm=jpg
+## Correspondance des fichiers
 
-Licence : https://www.pexels.com/license/ — utilisation et modifications gratuites, attribution facultative ; ne pas suggérer un soutien commercial des personnes représentées. Licence et sources vérifiées le 22 septembre 2026.
+- `ecole/al-hidaya-01.webp` : `WhatsApp Image 2026-09-22 at 19.08.26.jpeg`
+- `ecole/al-hidaya-02.webp` : `WhatsApp Image 2026-09-22 at 19.08.28.jpeg`
+- `ecole/al-hidaya-03.webp` : `WhatsApp Image 2026-09-22 at 19.08.28 (1).jpeg`
+- `ecole/al-hidaya-04.webp` : `WhatsApp Image 2026-09-22 at 19.09.35.jpeg`
+- `ecole/al-hidaya-05.webp` : `WhatsApp Image 2026-09-22 at 19.09.35 (1).jpeg`
+- `ecole/al-hidaya-06.webp` : `WhatsApp Image 2026-09-22 at 19.09.36.jpeg`
+- `ecole/al-hidaya-07.webp` : `WhatsApp Image 2026-09-22 at 19.09.36 (1).jpeg`
+- `ecole/al-hidaya-08.webp` : `WhatsApp Image 2026-09-22 at 19.11.37.jpeg`
+- `ecole/al-hidaya-09.webp` : `WhatsApp Image 2026-09-22 at 19.11.39.jpeg`
+- `ecole/al-hidaya-10.webp` : `WhatsApp Image 2026-09-22 at 19.11.39 (1).jpeg`
+- `ecole/al-hidaya-11.webp` : `WhatsApp Image 2026-09-22 at 19.11.39 (2).jpeg`
+- `ecole/al-hidaya-12.webp` : `WhatsApp Image 2026-09-22 at 19.11.39 (3).jpeg`
+- `ecole/al-hidaya-13.webp` : `WhatsApp Image 2026-09-22 at 19.11.40.jpeg`
+- `ecole/al-hidaya-14.webp` : `WhatsApp Image 2026-09-22 at 19.11.40 (1).jpeg`
+- `ecole/al-hidaya-15.webp` : `WhatsApp Image 2026-09-22 at 19.11.40 (2).jpeg`
+- `ecole/al-hidaya-16.webp` : `WhatsApp Image 2026-09-22 at 19.11.41.jpeg`
+- `ecole/al-hidaya-17.webp` : `WhatsApp Image 2026-09-22 at 19.11.41 (1).jpeg`
+- `ecole/al-hidaya-18.webp` : `WhatsApp Image 2026-09-22 at 19.11.41 (2).jpeg`
+- `ecole/al-hidaya-19.webp` : `WhatsApp Image 2026-09-22 at 19.11.41 (3).jpeg`
+- `ecole/al-hidaya-20.webp` : `WhatsApp Image 2026-09-22 at 19.11.42.jpeg`
+- `ecole/al-hidaya-21.webp` : `WhatsApp Image 2026-09-22 at 19.11.42 (1).jpeg`
+- `ecole/al-hidaya-22.webp` : `WhatsApp Image 2026-09-22 at 19.11.42 (2).jpeg`
+- `ecole/al-hidaya-23.webp` : `WhatsApp Image 2026-09-22 at 19.11.42 (3).jpeg`
+- `ecole/al-hidaya-24.webp` : `WhatsApp Image 2026-09-22 at 19.11.43.jpeg`
+- `ecole/al-hidaya-25.webp` : `WhatsApp Image 2026-09-22 at 19.11.43 (1).jpeg`
+- `ecole/al-hidaya-26.webp` : `WhatsApp Image 2026-09-22 at 19.11.43 (2).jpeg`
+- `ecole/al-hidaya-27.webp` : `WhatsApp Image 2026-09-22 at 19.11.44.jpeg`
+- `ecole/al-hidaya-28.webp` : `WhatsApp Image 2026-09-22 at 19.11.44 (1).jpeg`
+- `ecole/al-hidaya-29.webp` : `WhatsApp Image 2026-09-22 at 19.12.44.jpeg`
+- `ecole/al-hidaya-30.webp` : `WhatsApp Image 2026-09-22 at 19.17.15.jpeg`
+- `ecole/al-hidaya-31.webp` : `WhatsApp Image 2026-09-22 at 19.17.15 (1).jpeg`
+- `ecole/al-hidaya-32.webp` : `WhatsApp Image 2026-09-22 at 19.17.16.jpeg`

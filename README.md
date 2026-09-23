@@ -25,10 +25,13 @@ npm run build
 - `lib/school-fees.json` : montants de la fiche officielle 2026–2027.
 - `public/documents/fiche-renseignement-2026-2027.pdf` : fiche originale téléchargeable.
 - `public/images/` : images locales optimisées. Sources dans `SOURCES.md`.
+- `lib/school-photos.json` : ordre, légendes, dimensions et miniatures des 32 photos de l’école.
 
 Les coordonnées, niveaux, tarifs, formules d’accueil et conditions d’inscription proviennent de la fiche officielle 2026–2027. Les liens de contact ouvrent le téléphone ou la messagerie de l’utilisateur. Les horaires d’accueil restent à confirmer auprès de la direction.
 
-Les photographies sont des illustrations, pas les élèves d’Alhidaya. Les événements sont des exemples sans dates réelles. Ces contenus restent à remplacer avec les photos et le programme de l’école.
+Les 32 photographies de l’école proviennent de l’archive WhatsApp fournie. Elles sont optimisées en WebP, avec des miniatures pour la galerie et des images plus grandes pour l’agrandissement. La galerie montre d’abord six photos, puis permet de consulter l’ensemble. Dans l’agrandissement, les flèches du clavier changent de photo et Échap ferme la fenêtre.
+
+Les événements sont encore des exemples sans dates réelles. Le programme de l’école reste à fournir ; aucune date n’est déduite du nom des fichiers photo.
 
 Navigation par ancres, menu mobile, galerie agrandissable au clavier et fiches d’événements. Les animations respectent la préférence de réduction de mouvement.
 
