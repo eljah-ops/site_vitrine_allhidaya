@@ -1026,3 +1026,50 @@ footer {
   .school-gallery .gallery-item { height: 350px; }
   .gallery-actions { flex-direction: column; align-items: stretch; text-align: center; }
 }
+
+/* Motion stays decorative: content remains visible without JavaScript. */
+.site-header { transition: box-shadow .3s ease, background .3s ease; }
+.site-header.is-scrolled { background: #fffffff8; box-shadow: 0 5px 24px #174b3710; }
+.reading-progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; overflow: hidden; pointer-events: none; }
+.reading-progress > div { width: 100%; height: 100%; background: #4a9560; transform: scaleX(0); transform-origin: left center; }
+.nav-link { position: relative; transition: color .2s ease; }
+.nav-link::after { content: ''; position: absolute; bottom: 3px; left: 0; right: 0; height: 2px; border-radius: 2px; background: #196c48; transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.nav-link[aria-current="location"] { color: #196c48; }
+.nav-link[aria-current="location"]::after, .nav-link:focus-visible::after { transform: scaleX(1); }
+.mobile-nav a { border-radius: 6px; }
+.mobile-nav a[aria-current="location"] { background: #edf5e9; color: #196c48; }
+.button, .round-link, .menu-toggle, .back-to-top { transition: transform .2s ease, box-shadow .25s ease, background .2s ease, color .2s ease; }
+.button svg, .text-link svg, .round-link svg, .gallery-caption svg { transition: transform .25s ease; }
+.cycle-card, .event-card, .gallery-item, .enrollment-notes > article { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .25s ease; }
+.cycle-card:focus-within, .event-card:focus-within { border-color: #6c9c76; }
+.back-to-top { position: fixed; right: 24px; bottom: max(24px, env(safe-area-inset-bottom)); z-index: 35; width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid #ffffff60; border-radius: 50%; background: #196c48; color: white; box-shadow: 0 6px 24px #174b372a; }
+@media (hover: hover) and (pointer: fine) {
+  .nav-link:hover::after { transform: scaleX(1); }
+  .cycle-card:hover, .event-card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px #174b3710; }
+  .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 12px 24px #174b371c; }
+  .enrollment-notes > article:hover { transform: translateY(-3px); }
+  .button:hover { box-shadow: 0 5px 15px #174b3715; }
+  .button:hover svg, .text-link:hover svg, .round-link:hover svg, .gallery-item:hover .gallery-caption svg { transform: translate(2px, -2px); }
+  .back-to-top:hover { background: #124d34; transform: translateY(-3px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes soft-entry { from { opacity: 0; transform: translate3d(0, 18px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+  @keyframes photo-entry { from { opacity: .35; transform: scale(.985); } to { opacity: 1; transform: scale(1); } }
+  .hero-copy > * { animation: soft-entry .7s cubic-bezier(.22,1,.36,1) both; }
+  .hero-copy > :nth-child(2) { animation-delay: .07s; }
+  .hero-copy > :nth-child(3) { animation-delay: .14s; }
+  .hero-copy > :nth-child(4) { animation-delay: .21s; }
+  .hero-copy > :nth-child(5) { animation-delay: .28s; }
+  .hero-visual { animation: soft-entry .85s .12s cubic-bezier(.22,1,.36,1) both; }
+  .mobile-nav { animation: soft-entry .2s ease-out both; }
+  .back-to-top { animation: soft-entry .25s ease-out backwards; }
+  .lightbox-photo { animation: photo-entry .25s ease-out both; }
+  .button:active, .round-link:active, .menu-toggle:active, .back-to-top:active { transform: scale(.96); }
+}
+@media (max-width: 767px) { .back-to-top { right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); width: 44px; height: 44px; } }
+@media (prefers-reduced-motion: reduce) {
+  .cycle-card:hover, .event-card:hover, .gallery-item:hover, .enrollment-notes > article:hover,
+  .button:hover, .button:hover svg, .text-link:hover svg, .round-link:hover svg,
+  .gallery-item:hover .gallery-caption svg, .back-to-top:hover { transform: none; }
+  .cycle-card:hover .cycle-image img, .event-card:hover .event-cover img, .gallery-item:hover img { transform: none; }
+}

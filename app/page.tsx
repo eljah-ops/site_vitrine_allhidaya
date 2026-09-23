@@ -1,10 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { usePageMotion } from "@/hooks/use-page-motion";
 import SchoolFees from "@/components/school-fees";
 import photos from "@/lib/school-photos.json";
 import {
   ArrowUpRight,
   ArrowRight,
+  ArrowUp,
   BookOpen,
   Sprout,
   Heart,
@@ -76,6 +78,8 @@ export default function Home() {
   const [photo, setPhoto] = useState<number | null>(null);
   const [showAllPhotos, setShowAllPhotos] = useState(false);
   const [event, setEvent] = useState<number | null>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const { contentRef, progressRef, activeSection, scrolled, showBackToTop } = usePageMotion(showAllPhotos);
   return (
     <>
       <a className="skip-link" href="#contenu">
@@ -89,7 +93,16 @@ export default function Home() {
           </span>
         </div>
       </div>
-      <header className="site-header">
+      <header
+        className={`site-header${scrolled ? " is-scrolled" : ""}`}
+        onKeyDown={(event) => {
+          if (menuOpen && event.key === "Escape") {
+            setMenuOpen(false);
+            menuButtonRef.current?.focus();
+          }
+        }}
+      >
+        <div className="reading-progress" aria-hidden="true"><div ref={progressRef} /></div>
         <div className="wrap flex min-h-24 items-center justify-between gap-6">
           <a href="#accueil" className="brand" aria-label="Alhidaya — Accueil">
             <span className="brand-icon">
@@ -107,7 +120,7 @@ export default function Home() {
             aria-label="Navigation principale"
           >
             {navigation.map(([label, id]) => (
-              <a className="nav-link" key={id} href={`#${id}`}>
+              <a className="nav-link" key={id} href={`#${id}`} aria-current={activeSection === id ? "location" : undefined}>
                 {label}
               </a>
             ))}
@@ -115,10 +128,12 @@ export default function Home() {
           <a
             className="button button-green hidden sm:inline-flex"
             href="#contact"
+            aria-current={activeSection === "contact" ? "location" : undefined}
           >
             Rencontrons-nous <ArrowUpRight size={17} />
           </a>
           <button
+            ref={menuButtonRef}
             className="menu-toggle xl:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
@@ -135,7 +150,7 @@ export default function Home() {
             aria-label="Navigation mobile"
           >
             {[...navigation, ["Contact", "contact"]].map(([label, id]) => (
-              <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>
+              <a key={id} href={`#${id}`} aria-current={activeSection === id ? "location" : undefined} onClick={() => setMenuOpen(false)}>
                 {label}
                 <ArrowUpRight size={16} />
               </a>
@@ -143,7 +158,7 @@ export default function Home() {
           </nav>
         )}
       </header>
-      <main id="contenu">
+      <main id="contenu" ref={contentRef}>
         <section id="accueil" className="hero">
           <div className="wrap hero-grid">
             <div className="hero-copy">
@@ -563,6 +578,11 @@ export default function Home() {
           <a href="#accueil">Retour en haut ↑</a>
         </div>
       </footer>
+      {showBackToTop && (
+        <a className="back-to-top" href="#accueil" aria-label="Revenir en haut de la page" title="Revenir en haut">
+          <ArrowUp size={21} />
+        </a>
+      )}
       <Dialog
         open={photo !== null}
         onOpenChange={(open) => {
@@ -598,9 +618,10 @@ export default function Home() {
                 </DialogClose>
               </div>
               <img
+                key={photos[photo].src}
                 src={photos[photo].src}
                 alt={photos[photo].alt}
-                className="max-h-[65dvh] w-full rounded-xl object-contain"
+                className="lightbox-photo max-h-[65dvh] w-full rounded-xl object-contain"
               />
               <div className="flex justify-between gap-3">
                 <button
