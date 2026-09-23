@@ -45,7 +45,8 @@ const events = [
       "Un temps d’échange entre les familles et l’équipe éducative autour de l’éducation des enfants.",
     detail:
       "Le thème, les intervenants et les modalités de participation seront précisés avec le programme de l’école.",
-    tone: "mint",
+    photo: photos.find((photo) => photo.id === 25)!,
+    photoPosition: "center 15%",
   },
   {
     icon: Bus,
@@ -55,7 +56,8 @@ const events = [
       "Observer, explorer et s’émerveiller : une autre façon de découvrir le monde qui nous entoure.",
     detail:
       "La destination, les classes concernées et les horaires seront communiqués par l’école.",
-    tone: "cream",
+    photo: photos.find((photo) => photo.id === 4)!,
+    photoPosition: "center",
   },
   {
     icon: Sparkles,
@@ -65,7 +67,8 @@ const events = [
       "Un moment de partage pour mettre en lumière les découvertes et les réalisations des élèves.",
     detail:
       "Le programme de cette rencontre et les informations destinées aux familles seront ajoutés après confirmation par l’école.",
-    tone: "blue",
+    photo: photos.find((photo) => photo.id === 30)!,
+    photoPosition: "center",
   },
 ];
 export default function Home() {
@@ -362,10 +365,19 @@ export default function Home() {
           <div className="event-grid">
             {events.map((item, index) => (
               <article key={item.type} className="event-card">
-                <div className={`event-cover ${item.tone}`}>
-                  <item.icon size={48} strokeWidth={1.2} />
-                  <span>EXEMPLE D’ÉVÉNEMENT</span>
-                  <span className="event-index">0{index + 1}</span>
+                <div className="event-cover">
+                  <img
+                    src={item.photo.thumbnail}
+                    srcSet={`${item.photo.thumbnail} ${item.photo.thumbnailWidth}w, ${item.photo.src} ${item.photo.width}w`}
+                    sizes="(max-width: 767px) 90vw, 30vw"
+                    alt={item.photo.alt}
+                    width={item.photo.width}
+                    height={item.photo.height}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ objectPosition: item.photoPosition }}
+                  />
+                  <span className="event-photo-label"><item.icon size={16} /> EXEMPLE D’ÉVÉNEMENT</span>
                 </div>
                 <div className="event-content">
                   <span className="eyebrow">{item.type}</span>

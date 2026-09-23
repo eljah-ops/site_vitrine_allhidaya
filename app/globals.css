@@ -522,37 +522,35 @@ h3 {
   overflow: hidden;
 }
 .event-cover {
-  height: 175px;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  height: 240px;
   position: relative;
   overflow: hidden;
-}
-.event-cover.mint {
   background: #e7eedc;
-  color: #54734b;
 }
-.event-cover.cream {
-  background: #f4efdb;
-  color: #7a7242;
+.event-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
 }
-.event-cover.blue {
-  background: #e7eeed;
-  color: #527974;
+.event-card:hover .event-cover img {
+  transform: scale(1.035);
 }
-.event-cover > span:not(.event-index) {
-  font-size: 12px;
-  letter-spacing: 0.07em;
-}
-.event-index {
-  font-family: Georgia, serif;
-  font-size: 150px;
+.event-photo-label {
   position: absolute;
-  right: 10px;
-  top: -25px;
-  opacity: 0.09;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  color: white;
+  background: #174b37e8;
+  font-size: 12px;
+  letter-spacing: 0.04em;
 }
 .event-content {
   padding: 24px;
@@ -889,7 +887,7 @@ footer {
     gap: 22px;
   }
   .event-cover {
-    height: 145px;
+    height: 230px;
   }
   .event-content h3 {
     font-size: 27px;
