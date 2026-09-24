@@ -313,11 +313,6 @@ export default function Home() {
                 <Check size={16} /> Cultiver le respect
               </span>
             </div>
-            <p className="draft-note">
-              IA Dakar / IEF Parcelles Assainies
-              <br />
-              Autorisation : IA-Dk/BEP · NINEA : 00843-94-63
-            </p>
             <div className="school-jump-links">
               <a href="#pedagogie">
                 Notre pédagogie <ArrowUpRight size={16} />
