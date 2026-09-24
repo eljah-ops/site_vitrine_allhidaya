@@ -31,6 +31,8 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://eljah-ops.github.io/site_vitrine_allhidaya
         run: npm run build
 
       - name: Prepare Pages artifact
