@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { withBasePath } from '@/lib/utils';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 export const metadata: Metadata = {
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: withBasePath('/favicon.svg') },
   metadataBase: siteUrl ? new URL(siteUrl) : undefined,
   title: {
     default: 'Al Hidaya Keur Fatma Haris | École franco-arabe à Dakar',
@@ -31,7 +32,11 @@ export const metadata: Metadata = {
     description:
       'Une école franco-arabe à Cambérène 1, Dakar, du préscolaire à l’élémentaire.',
     images: [
-      { url: '/images/ecole/al-hidaya-13.webp', width: 1200, height: 1600 },
+      {
+        url: withBasePath('/images/ecole/al-hidaya-13.webp'),
+        width: 1200,
+        height: 1600,
+      },
     ],
   },
   twitter: {
@@ -39,7 +44,7 @@ export const metadata: Metadata = {
     title: 'Al Hidaya Keur Fatma Haris | École franco-arabe à Dakar',
     description:
       'Préscolaire, élémentaire, internat et demi-pensionnat à Cambérène 1.',
-    images: ['/images/ecole/al-hidaya-13.webp'],
+    images: [withBasePath('/images/ecole/al-hidaya-13.webp')],
   },
   robots: { index: true, follow: true },
 };
@@ -66,7 +71,7 @@ export default function RootLayout({
               email: 'safietou1305@gmail.com',
               image: siteUrl
                 ? `${siteUrl}/images/ecole/al-hidaya-13.webp`
-                : '/images/ecole/al-hidaya-13.webp',
+                : withBasePath('/images/ecole/al-hidaya-13.webp'),
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'Cambérène 1, quartier Islam, en face de la mer',

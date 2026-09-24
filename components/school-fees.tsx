@@ -15,6 +15,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import fees from '@/lib/school-fees.json';
+import { withBasePath } from '@/lib/utils';
 
 const money = (amount: number) => `${amount.toLocaleString('fr-FR')} F`;
 
@@ -30,7 +31,7 @@ export default function SchoolFees() {
         </div>
         <a
           className="button button-outline inline-flex"
-          href="/documents/fiche-renseignement-2026-2027.pdf"
+          href={withBasePath('/documents/fiche-renseignement-2026-2027.pdf')}
           download
         >
           <Download size={18} /> Télécharger la fiche (PDF)

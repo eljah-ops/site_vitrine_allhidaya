@@ -27,3 +27,10 @@ Pour préparer la mise en ligne, je dois définir l'URL publique :
 NEXT_PUBLIC_SITE_URL=https://votre-domaine.sn npm run build
 ```
 
+## Déploiement GitHub Pages
+
+Le workflow `.github/workflows/deploy-pages.yml` publie automatiquement le site sur GitHub Pages à chaque push sur `master` (et via déclenchement manuel).
+
+Étape unique à faire dans GitHub : **Settings > Pages > Source = GitHub Actions**.
+
+> ⚠️ Les sites GitHub Pages sont publics. Si ce dépôt reste privé, la publication peut nécessiter une offre GitHub éligible pour Pages sur dépôt privé.
