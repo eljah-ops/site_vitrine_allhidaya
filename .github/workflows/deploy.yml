@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_SITE_URL: https://eljah-ops.github.io/site_vitrine_allhidaya
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,13 +29,20 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
       - name: Install dependencies
         run: npm ci
 
+      - name: Check types
+        run: npx tsc --noEmit
+
       - name: Build
-        env:
-          NEXT_PUBLIC_SITE_URL: https://eljah-ops.github.io/site_vitrine_allhidaya
         run: npm run build
+
+      - name: Verify exported site and media
+        run: npm run check:export
 
       - name: Prepare Pages artifact
         run: |
