@@ -11,7 +11,8 @@ import {
   SchoolVisit,
 } from '@/components/school-life';
 import { schoolHours } from '@/lib/school-info';
-import photos from '@/lib/school-photos.json';
+import photosData from '@/lib/school-photos.json';
+import { withBasePath } from '@/lib/utils';
 import {
   ArrowUpRight,
   ArrowRight,
@@ -48,6 +49,11 @@ const navigation = [
   ['Vie scolaire', 'evenements'],
   ['FAQ', 'questions'],
 ];
+const photos = photosData.map((photo) => ({
+  ...photo,
+  src: withBasePath(photo.src),
+  thumbnail: withBasePath(photo.thumbnail),
+}));
 const activities = [
   {
     icon: Sprout,

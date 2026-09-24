@@ -11,6 +11,7 @@ import {
   Sprout,
 } from 'lucide-react';
 import photos from '@/lib/school-photos.json';
+import { withBasePath } from '@/lib/utils';
 import {
   schoolAddress,
   schoolDirectionsUrl,
@@ -19,8 +20,14 @@ import {
   schoolMapUrl,
 } from '@/lib/school-info';
 
+const schoolPhotos = photos.map((photo) => ({
+  ...photo,
+  src: withBasePath(photo.src),
+  thumbnail: withBasePath(photo.thumbnail),
+}));
+
 function SchoolPhoto({ id, caption }: { id: number; caption: string }) {
-  const photo = photos.find((item) => item.id === id)!;
+  const photo = schoolPhotos.find((item) => item.id === id)!;
   return (
     <figure className="editorial-photo">
       <img
